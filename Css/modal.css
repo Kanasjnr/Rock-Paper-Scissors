@@ -45,3 +45,14 @@
   }
   
   
+@media (max-width: 700px) {
+  .choices {
+    font-size: 110px;
+  }
+}
+
+@media (max-width: 500px) {
+  .choices {
+    font-size: 80px;
+  }
+}
