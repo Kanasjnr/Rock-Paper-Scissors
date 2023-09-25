@@ -34,3 +34,14 @@
     font-size: 1.2rem;
     margin-top: 1rem;
   }
+  @keyframes modalopen {
+    from {
+      opacity: 0;
+    }
+  
+    to {
+      opacity: 1;
+    }
+  }
+  
+  
