@@ -52,32 +52,31 @@ function getWinner(p, c) {
   }
 }
 
-const showWinner = (winner, computerChoice) => {
-  if (winner === "player") {
-    // increase by score
+function showWinner(winner, computerChoice) {
+  if (winner === 'player') {
+    // Inc player score
     scoreBoard.player++;
-
-    //show modal result
-    result.innerHTML = ` 
-    <h1 class="text-win">You Win</h1>
-    <i id="${computerChoice}" class="choice fas fa-hand-${computerChoice} fa-10x"></i>
-    <p>Computer chose <strong>${computerChoice}</strong></p>
+    // Show modal result
+    result.innerHTML = `
+      <h1 class="text-win">You Win</h1>
+      <i class="fas fa-hand-${computerChoice} fa-10x"></i>
+      <p>Computer Chose <strong>${computerChoice.charAt(0).toUpperCase()+computerChoice.slice(1)}</strong></p>
     `;
-  } else if (winner === "computer") {
-    //increase by score
+  } else if (winner === 'computer') {
+    // Inc computer score
     scoreBoard.computer++;
-    //show modal result
-    result.innerHTML = ` 
-    <h1 class="text-win">You Lose</h1>
-    <i id="${computerChoice}" class="choice fas fa-hand-${computerChoice} fa-10x"></i>
-    <p>Computer chose <strong>${computerChoice}</strong></p>
+    // Show modal result
+    result.innerHTML = `
+      <h1 class="text-lose">You Lose</h1>
+      <i class="fas fa-hand-${computerChoice} fa-10x"></i>
+      <p>Computer Chose <strong>${computerChoice.charAt(0).toUpperCase()+computerChoice.slice(1)}</strong></p>
     `;
   } else {
     result.innerHTML = `
-        <h1>It is a draw</h1>
-        <i id="${computerChoice}" class="choice fas fa-hand-${computerChoice} fa-10x"></i>
-        <p>Computer chose <strong>${computerChoice}</strong></p>
-        `;
+      <h1>It's A Draw</h1>
+      <i class="fas fa-hand-${computerChoice} fa-10x"></i>
+      <p>Computer Chose <strong>${computerChoice.charAt(0).toUpperCase()+computerChoice.slice(1)}</strong></p>
+    `;
   }
 
   score.innerHTML = `
